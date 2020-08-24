@@ -6,10 +6,35 @@ In order to run the code *node* and *npm* need to be installed on the machine. I
 
 
 ### Executing the code
-First clone the code from the git-repository via git clone and then *cd* into the newly created repository. \
-Next run *npm init*. \
-Now the code can be executed by typing *node src/index.js* in the terminal which will will prompt the user to enter the path and hit enter.\
-Alternatively one can also directly type the path in command line: *node src/index.js PATH*
+1. Clone the code from the repository
+```
+$ git clone https://github.com/ttobollik/exercisePremiumMinds.git
+$ cd exercisePremiumMinds
+```
 
-### Executing the tests
-In order to execute the tests type *npm test*. 
+2. Install all dependencies
+```
+$ npm install
+```
+
+3. Execute tests
+```
+$ npm test
+```
+
+4. Execute the code and enter a path via console input
+```
+$ node src/index.js
+```
+
+**or**
+
+4. Execute the code and enter the path directly in the command line
+```
+$ node src/index.js PATH
+```
+
+
+
+
+
