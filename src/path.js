@@ -33,6 +33,30 @@ class Path {
         }
     }
 
+    visit() {
+        const x = this.position.x
+        const y = this.position.y
+        const posX = this.visited[String(x)] //undefined if key doesn't exist in object
+        if (posX) { //if posX is defined, a key with this x value already exists
+            if (posX.indexOf(y) === -1) { //if the y value has not been visited the cell is univisted
+                this.pokemonCaught += 1
+                posX.push(y)
+            }
+        } else { //if posX is undefined, the cell cannot have been visited yet so it needs to be added to the visited object
+            this.pokemonCaught += 1
+            this.visited[String(this.position.x)] = [this.position.y]
+        }
+    }
+
+    moveAlongPath(path) {
+        for (var i = 0; i < path.length; i++) {
+            const next = path.charAt(i)
+            this.move(next);
+            this.visit()
+          }
+        return 1
+    }
+
 
 }
 
