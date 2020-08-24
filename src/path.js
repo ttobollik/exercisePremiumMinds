@@ -11,4 +11,29 @@ class Path {
         this.pokemonCaught = 1
         this.visited = {'0':[0]}
     }
+    
+    move(direction) {
+        switch(direction) {
+            case 'N':
+                this.position.y += 1
+                break
+            case 'S':
+                this.position.y -= 1
+                break
+            case 'E':
+                this.position.x += 1
+                break
+            case 'O':
+                this.position.x -= 1
+                break
+            case '':
+                break
+            default:
+                throw new InvalidPathException(direction + " is an invalid path")
+        }
+    }
+
+
 }
+
+module.exports = Path
