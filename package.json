@@ -4,11 +4,15 @@
   "description": "Solving the provided exercise for my application at premium minds",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "watch": "jest --watchAll"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ttobollik/exercisePremiumMinds.git"
+  },
+  "dependencies": {
+    "jest": "26.4.1"
   },
   "author": "Theresa",
   "license": "ISC",
