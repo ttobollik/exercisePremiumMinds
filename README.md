@@ -1,14 +1,15 @@
-# exercisePremiumMinds
-Exercise for the application at Premium Minds
+## exercisePremiumMinds
+Exercise for the application at Premium Minds.
 
-In order to run the code node needs to be installed on the machine. (https://nodejs.org/en/download/) \
-The code can be executed using node index.js \
-\ \
-To run the test please make sure that jest is added in the dependencies and script. Then run npm test to execute the test. \
-"scripts": {\
-    "test": "jest",\
-  },\
-  "dependencies": {\
-    "jest": "26.4.1"\
-  },\
+### Prerequisites
+In order to run the code *node* and *npm* need to be installed on the machine. Instructions on node installation can be found here: https://nodejs.org/en/download/ (includes npm)\
 
+
+### Executing the code
+First clone the code from the git-repository via git clone and then *cd* into the newly created repository. \
+Next run *npm init*. \
+Now the code can be executed by typing *node src/index.js* in the terminal which will will prompt the user to enter the path and hit enter.\
+Alternatively one can also directly type the path in command line: *node src/index.js PATH*
+
+### Executing the tests
+In order to execute the tests type *npm test*. 
