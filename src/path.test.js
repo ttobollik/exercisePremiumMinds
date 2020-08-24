@@ -25,13 +25,7 @@ test('move', () => {
   path.move('E')
   expect(path.position.x).toBe(0)
   expect(path.position.y).toBe(-1)
-  expect(() => {
-      path.move('M')
-  }).toThrow()
 }) 
-
-
-
 
 test('visit', () => {
   const path = new Path()
@@ -45,27 +39,6 @@ test('visit', () => {
   path.visit()
   expect(path.pokemonCaught).toBe(3)
 }) 
-
-
-test('move along path - provided test case 1', () => {
-  const path = new Path()
-  path.moveAlongPath("E")
-  expect(path.pokemonCaught).toBe(2)
-})
-
-
-test('move along path - provided test case 2', () => {
-  const path = new Path()
-  path.moveAlongPath("NESO")
-  expect(path.pokemonCaught).toBe(4)
-})
-
-
-test('move along path - provided test case 3', () => {
-  const path = new Path()
-  path.moveAlongPath("NSNSNSNSNSNSNS")
-  expect(path.pokemonCaught).toBe(2)
-})
 
 
 test('move along path - long path', () => {
@@ -82,9 +55,28 @@ test('move along path - empty path', () => {
 })
 
 
-test('move along path - wrong input', () => {
+test('move along path - custom path one direction', () => {
   const path = new Path()
-  expect(() => {
-    path.move("/IBE")
-  }).toThrow()
+  path.moveAlongPath("NNNNNNN")
+  expect(path.pokemonCaught).toBe(8)
 })
+
+
+test('move along path - custom path binary', () => {
+  const path = new Path()
+  path.moveAlongPath("EOEOEOEOEOEOEOEOE")
+  expect(path.pokemonCaught).toBe(2)
+})
+
+test('move along path - custom path crossings', () => {
+  const path = new Path()
+  path.moveAlongPath("SONOSENES")
+  expect(path.pokemonCaught).toBe(6)
+})
+
+test('move along path - custom path nonsense', () => {
+  const path = new Path()
+  path.moveAlongPath("NONSENSE")
+  expect(path.pokemonCaught).toBe(6)
+})
+

@@ -26,10 +26,6 @@ class Path {
             case 'O':
                 this.position.x -= 1
                 break
-            case '':
-                break
-            default:
-                throw new InvalidPathException(direction + " is an invalid path")
         }
     }
 

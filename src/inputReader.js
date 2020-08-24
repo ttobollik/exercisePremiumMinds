@@ -1,11 +1,11 @@
 const readline = require("readline")
+const Validator = require("./validator")
 
 class InputReader {
     constructor(){
         this.input = ''
     }
 
-    //depending on user input the path can be written in the command line or console
     async readFromProvidedSource() {
         if (process.argv.length > 2) {
             return(this.readFromCommandLine())
@@ -21,9 +21,14 @@ class InputReader {
                 output: process.stdout
               })
               rl.question("Please enter Ashs Path (allowed letters 'N', 'E', 'S', 'O, '') and press enter: ", (answer) => {
-                this.input = answer 
-                rl.close()
-                resolve(answer)
+                this.input = answer
+                const validator =  new Validator()
+                if (validator.validatePath(answer)) {
+                    rl.close()
+                    resolve(answer)
+                } else {
+                    reject()
+                }
             })
         })
         
